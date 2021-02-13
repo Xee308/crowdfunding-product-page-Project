@@ -1,0 +1,45 @@
+.header {
+
+  background-color: rgb(145, 211, 189);
+
+  @include breakpoint-down(medium){
+    nav {
+      padding: 30px 24px;
+    }
+  }
+  
+  @include breakpoint-up(large){
+    nav {
+      padding: 47px 166px ;
+    }
+  }
+
+  &__menu { // mobile menu
+
+    > span { 
+      display: block;
+      width: 16px;
+      height: 3px;
+      background-color: white;
+
+      &:not(:last-child){
+        margin-bottom: 3px;
+      }
+      
+    }
+
+  }
+
+  &__links {
+
+    a {
+      font-size: $font-sm;
+      color: $darkGray;
+
+      &:not(:last-child) { 
+        margin-right: 32px;
+      }
+    }
+
+  }
+}
