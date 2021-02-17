@@ -6,11 +6,27 @@
     nav {
       padding: 30px 24px;
     }
+
+    &__image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/image-hero-mobile.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      min-height: 18.75rem;
+    }
   }
   
   @include breakpoint-up(large){
     nav {
       padding: 47px 166px ;
+    }
+
+    &__image {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(/images/image-hero-desktop.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+      min-height: 25.0625rem;
     }
   }
 
@@ -21,11 +37,29 @@
       width: 16px;
       height: 3px;
       background-color: white;
+      transition: all 300ms ease-in-out;
+      transform-origin: -0.5px 1.5px;
 
       &:not(:last-child){
         margin-bottom: 3px;
       }
       
+    }
+
+    &.open {
+
+      > span:first-child {
+        transform: rotate(45deg);
+      }
+
+      > span:nth-child(2){
+        opacity: 0;
+      }
+
+      > span:last-child{
+        transform: rotate(-45deg);
+      }
+
     }
 
   }
@@ -34,7 +68,7 @@
 
     a {
       font-size: $font-sm;
-      color: $darkGray;
+      color: white;
 
       &:not(:last-child) { 
         margin-right: 32px;
