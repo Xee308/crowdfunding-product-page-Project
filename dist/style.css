@@ -1,3 +1,57 @@
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fade-out {
+  -webkit-animation: fade-out 300ms ease-in-out forwards;
+          animation: fade-out 300ms ease-in-out forwards;
+}
+
 html {
   font-size: 100%;
   -webkit-box-sizing: border-box;
@@ -62,13 +116,37 @@ a, a:visited, a:hover {
   }
 }
 
-.header {
-  background-color: #91d3bd;
+.overlay {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  right: 0%;
+  bottom: 0%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.25)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
+  visibility: hidden;
+  opacity: 0;
+}
+
+.header.open .header__menu > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__menu > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 @media (max-width: 63.9375em) {
   .header nav {
+    position: relative;
     padding: 30px 24px;
+    z-index: 1;
   }
   .header__image {
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.25)), to(rgba(0, 0, 0, 0.25))), url(/images/image-hero-mobile.jpg);
@@ -107,20 +185,6 @@ a, a:visited, a:hover {
 
 .header__menu > span:not(:last-child) {
   margin-bottom: 3px;
-}
-
-.header__menu.open > span:first-child {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.header__menu.open > span:nth-child(2) {
-  opacity: 0;
-}
-
-.header__menu.open > span:last-child {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
 }
 
 .header__links a {
