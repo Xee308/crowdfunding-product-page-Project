@@ -44,6 +44,18 @@ a, a:visited, a:hover {
 
 }
 
+.container {
+
+    @include breakpoint-down(medium){
+      margin: 0 1.5rem;
+    }
+
+    @include breakpoint-up(large){
+      margin: 0 20.25rem;
+    }
+  
+}
+
 // Visibility
 .hide-for-mobile{
   //hide for tablet and mobile

@@ -1,3 +1,11 @@
+h1 {
+  font-size: $font-lg;
+}
+
+h2 {
+  font-size: $font-md;
+}
+
 .header {
 
   // hamburger open styles
@@ -79,6 +87,23 @@
       }
     }
 
+  }
+
+  &__popUpMenu {
+    background: white;
+    margin-top: 5.5rem;
+    flex-direction: column;
+    border-radius: 8px;
+
+    > a {
+      font-size: $font-md;
+      color: $black;
+      padding:1.75rem 1.5rem;
+
+      &:not(:last-child) { 
+        border-bottom: 1px solid #e6e6e6;
+      }
+    }
   }
 }
 
